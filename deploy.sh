@@ -1,6 +1,6 @@
 WEBAPP_SRC=/Development/workspaces/extjs/extjs-practicum/src/main/webapp
 rm -rfv $WEBAPP_SRC/archive $WEBAPP_SRC/classic* $WEBAPP_SRC/modern* $WEBAPP_SRC/cache* $WEBAPP_SRC/index*
-sencha app build production
+sencha app build classic production
 FONT_AWESOME=/Development/Fonts/font-awesome-4.6.3
 FONT_AWESOME_DEST=$WEBAPP_SRC/resources/font-awesome/fonts
 mkdir -p $FONT_AWESOME_DEST

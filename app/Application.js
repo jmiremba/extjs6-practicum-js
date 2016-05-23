@@ -9,6 +9,11 @@ Ext.define('Practicum.Application', {
     // Namespace of the application
     name: 'Practicum',
     
+    // Views
+    views: [
+        'login.Login'
+    ],
+    
     init: function () {
         // Reference to the application
         var _app = this;
@@ -45,7 +50,7 @@ Ext.define('Practicum.Application', {
                 remove:true,
                 listeners: { // #1
                     afteranimate: function(el, startTime, eOpts ){//#2
-                        console.log('launch'); // #3
+                        Ext.widget('login-window');
                     }
                 }
             });
