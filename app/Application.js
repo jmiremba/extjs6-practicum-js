@@ -9,6 +9,8 @@ Ext.define('Practicum.Application', {
     // Namespace of the application
     name: 'Practicum',
     
+    enableQuickTips: true,
+    
     // Views
     views: [
         'login.Login'

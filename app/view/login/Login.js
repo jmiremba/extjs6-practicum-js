@@ -41,13 +41,22 @@ Ext.define('Practicum.view.login.Login', {
             name: 'username',
             fieldLabel: 'Username',
             maxLength: 25,
-            vtype: 'alphanum'       // Alphanumeric characters only
+            vtype: 'alphanum',       // Alphanumeric characters only
+            listeners: {
+                specialKey: 'onTextFieldEnterKey'
+            }
         }, {
             inputType: 'password',  // Mask the password
             name: 'password',
             fieldLabel: 'Password',
             maxLength: 15,
-            vtype: 'complexPassword' // Custom complex validation
+            vtype: 'complexPassword', // Custom complex validation
+            id: 'passwordTxt',
+            enableKeyEvents: true,
+            listeners: {
+                specialKey: 'onTextFieldEnterKey',
+                keypress: 'onPasswordFieldKeyPress'
+            }
         }],
         dockedItems: [{
             xtype: 'toolbar',
