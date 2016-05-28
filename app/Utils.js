@@ -1,8 +1,8 @@
 Ext.define('Practicum.Utils', {
     // Static initialization
     statics : {
-        decodeJSON : function (text) {
-            var result = Ext.JSON.decode(action.response.responseText, true);
+        decodeJSON : function (responseText) {
+            var result = Ext.JSON.decode(responseText, true);
             if (!result) {
                 result = { success: false, message: 'No response received from server!' };
             }

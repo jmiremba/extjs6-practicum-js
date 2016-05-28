@@ -7,7 +7,8 @@ Ext.define('Practicum.view.login.LoginController', {
     
     requires: [
         'Practicum.view.login.CapsLockTooltip',
-        'Practicum.Utils'
+        'Practicum.Utils',
+        'Practicum.SessionMonitor'
     ],
     
     /**
@@ -37,14 +38,15 @@ Ext.define('Practicum.view.login.LoginController', {
         var _form = me.lookupReference('loginForm'); // Form
         
         // Submit the form
-        me.getView().mask('Authenticating...');
-        _form.submit ({
-            clientValidation: true,     // Validate client data one more time
-            url: 'login.json',          // Login URL
-            scope: me,                  // Scope is this view controller
-            success: 'onLoginSuccess',  // When login is successful
-            failure: 'onLoginFailure'   // When login  fails
-        });
+        //me.getView().mask('Authenticating...');
+        //_form.submit ({
+        //    clientValidation: true,     // Validate client data one more time
+        //    url: 'login.json',          // Login URL
+        //    scope: me,                  // Scope is this view controller
+        //    success: 'onLoginSuccess',  // When login is successful
+        //    failure: 'onLoginFailure'   // When login  fails
+        //});
+        me.onLoginSuccess(_form);
     },
     
     onLoginSuccess: function(form, action) {
@@ -54,6 +56,7 @@ Ext.define('Practicum.view.login.LoginController', {
         // Show main view
         this.getView().close();
         Ext.create('Practicum.view.main.Main');
+        Practicum.SessionMonitor.start();
     },
     
     onLoginFailure: function(form, action) {

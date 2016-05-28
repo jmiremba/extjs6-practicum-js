@@ -24,3 +24,46 @@
     margin-top: -200px;
     height: 267px;
 }
+
+/**
+ * Header
+ */
+$header-text-color: rgb(11, 103, 196);
+
+.app-header {
+    border-bottom: 2px solid darken($header-text-color, 15);
+}
+
+.app-header-title {
+    padding: 35px 0 5px 10px;
+    color: $header-text-color;
+    font-size: 75px;
+    font-weight: bold;
+    vertical-align: bottom;
+    height: 100%;
+}
+
+.app-header-logo {
+    background-image: url('images/practicum.png');
+    background-size:     cover;
+    background-repeat:   no-repeat;
+    background-position: center center;
+    height: 100%;
+    margin: 8px;
+}
+
+/**
+ * Footer
+ */
+$footer-text-color: rgb(11, 103, 196);
+
+.app-footer-content {
+    color: $footer-text-color;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.app-footer {
+    border-top: 1px solid darken($footer-text-color, 15);
+}
