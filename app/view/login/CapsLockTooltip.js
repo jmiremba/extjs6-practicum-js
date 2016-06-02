@@ -7,9 +7,11 @@ Ext.define('Practicum.view.login.CapsLockTooltip', {
     width: 300,
     dismissDelay: 0,
     autoHide: false,
-    title: '<div class="fa fa-exclamation-triangle"> Caps Lock is On</div>',
-    html: '<div>Having Caps Lock on may cause you to enter ' +
-        'your password incorrectly.</div><br/>' +
-        '<div>You should press Caps Lock to turn it off ' +
-        'before entering your password.</div>'
+    title: '<div class="fa fa-exclamation-triangle">'+Practicum.view.language.Translations[LANG].capsLockTitle+'</div>',
+    html: '<div>'+Practicum.view.language.Translations[LANG].capsLockLine1+'</div><br/><div>'+
+        Practicum.view.language.Translations[LANG].capsLockLine2+'</div>',
+    
+    requires: [
+        'Practicum.view.language.Translations'
+    ]
 });

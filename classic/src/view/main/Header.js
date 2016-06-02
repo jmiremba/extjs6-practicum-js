@@ -46,7 +46,7 @@ Ext.define('Practicum.view.main.Header', {
         items: [{
             xtype: 'button',
             itemId: 'logoutBtn',
-            text: 'Logout',
+            text: Practicum.view.language.Translations[LANG].logout,
             reference: 'logout',
             iconCls: 'fa fa-sign-out fa-lg buttonIcon',
             margin: '10 10 0 10',

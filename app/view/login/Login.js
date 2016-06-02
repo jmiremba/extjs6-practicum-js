@@ -6,7 +6,8 @@ Ext.define('Practicum.view.login.Login', {
     xtype: 'login-window',          // Alias for this widget
     
     requires: [
-        'Practicum.view.login.LoginController'
+        'Practicum.view.login.LoginController',
+        'Practicum.view.language.Selector'
     ],
     
     controller: 'login',            // Binding to view controller
@@ -18,7 +19,7 @@ Ext.define('Practicum.view.login.Login', {
         type: 'fit'                 // Contents will expand to fit this window
     },
     iconCls: 'fa fa-key fa-lg',     // Icons in the header
-    title: 'Login',                 // Title bar text
+    title: Practicum.view.language.Translations[LANG].login,      // Title bar text
     closeAction: 'hide',            // Prevent closing this window
     closable: false,                // Cannot close the window
     draggable: false,               // Prevent dragging the window across the screen
@@ -39,7 +40,7 @@ Ext.define('Practicum.view.login.Login', {
         },
         items: [{
             name: 'username',
-            fieldLabel: 'Username',
+            fieldLabel: Practicum.view.language.Translations[LANG].username,
             maxLength: 25,
             vtype: 'alphanum',       // Alphanumeric characters only
             listeners: {
@@ -48,7 +49,7 @@ Ext.define('Practicum.view.login.Login', {
         }, {
             inputType: 'password',  // Mask the password
             name: 'password',
-            fieldLabel: 'Password',
+            fieldLabel: Practicum.view.language.Translations[LANG].password,
             maxLength: 15,
             vtype: 'complexPassword', // Custom complex validation
             id: 'passwordTxt',
@@ -62,11 +63,13 @@ Ext.define('Practicum.view.login.Login', {
             xtype: 'toolbar',
             dock: 'bottom',
             items: [{
+                xtype: 'language-selector'
+            }, {
                 xtype: 'tbfill'     // Right-justify the ensuing components
             }, {
                 xtype: 'button',
                 iconCls: 'fa fa-times fa-lg',   // 'x' icon
-                text: 'Cancel',
+                text: Practicum.view.language.Translations[LANG].cancel,
                 listeners: {
                     click: 'onCancelLogin'      // Function defined in view controller
                 }
@@ -74,7 +77,7 @@ Ext.define('Practicum.view.login.Login', {
                 xtype: 'button',
                 formBind: true,     // Enabled only if the form has no errors
                 iconCls: 'fa fa-sign-in fa-lg', // Sign-in icon
-                text: 'Login',
+                text: Practicum.view.language.Translations[LANG].submit,
                 listeners: {
                     click: 'onSubmitLogin'      // Function defined in view controller
                 }

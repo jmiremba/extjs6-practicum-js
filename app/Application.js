@@ -9,6 +9,10 @@ Ext.define('Practicum.Application', {
     // Namespace of the application
     name: 'Practicum',
     
+    requires: [
+        'Practicum.view.language.Translations'
+    ],
+    
     enableQuickTips: true,
     
     // Views
@@ -19,6 +23,15 @@ Ext.define('Practicum.Application', {
     init: function () {
         // Reference to the application
         var _app = this;
+        
+        var url = Ext.util.Format.format("classic/resources/locales/locale-{0}.js", LANG);
+        Ext.Loader.loadScript({
+                url: url,
+                onLoad: this.onSuccess,
+                onError: this.onFailure,
+                scope: this
+            }
+        );
         
         // Show a splash screen while the application loads
         _app.splashscreen = Ext.getBody().mask (

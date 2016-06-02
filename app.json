@@ -212,7 +212,6 @@
         "path": "app/CustomVTypes.js",
         "includeInBundle": true
     }],
-
     
     /**
      * Settings specific to classic toolkit builds.
@@ -221,10 +220,15 @@
         "js": [
             // Remove this entry to individually load sources from the framework.
             {
-                "path": "${framework.dir}/build/ext-all-rtl-debug.js"
+                "path": "${framework.dir}/build/ext-all.js"
             }
+        ],
+        "requires": [
+            "ext-locale"
         ]
     },
+    
+    "locale": "en",
 
     /**
      * Settings specific to modern toolkit builds.
@@ -476,19 +480,15 @@
      * Extra resources to be copied into the resource folder as specified in the "resources"
      * property of the "output" object. Folders specified in this list will be deeply copied.
      */
-    "resources": [
-        {
-            "path": "resources",
-            "output": "shared"
-        },
-        {
-            "path": "${toolkit.name}/resources"
-        },
-        {
-            "path": "${build.id}/resources"
-        }
-    ],
-
+    "resources": [{
+        "path": "resources",
+        "output": "shared"
+    }, {
+        "path": "${toolkit.name}/resources"
+    }, {
+        "path": "${build.id}/resources"
+    }],
+    
     /**
      * File / directory name patttern to ignore when copying to the builds. Must be a
      * valid regular expression.

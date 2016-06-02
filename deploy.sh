@@ -10,3 +10,7 @@ FONTS_DEST=$WEBAPP_SRC/resources/fonts
 mkdir -p $FONTS_DEST
 cp -r $EXTJS_THEME_DIR/resources/fonts/* $FONTS_DEST
 cp -r classic/resources/images/* $WEBAPP_SRC/classic/resources/images/
+LOCALES_DEST=$WEBAPP_SRC/classic/resources/locales
+mkdir -p $LOCALES_DEST
+cp -rv ext/build/classic/locale/* $LOCALES_DEST
+rm -fv $LOCALES_DEST/*-debug*
