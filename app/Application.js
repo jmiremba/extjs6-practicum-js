@@ -10,14 +10,20 @@ Ext.define('Practicum.Application', {
     name: 'Practicum',
     
     requires: [
-        'Practicum.view.language.Translations'
+        'Practicum.view.language.Translations',
+        'Practicum.overrides.tree.ColumnOverride'
     ],
     
     enableQuickTips: true,
+    glyphFontFamily: 'FontAwesome',
     
     // Views
     views: [
         'login.Login'
+    ],
+    
+    controllers: [
+        'Menu'
     ],
     
     init: function () {

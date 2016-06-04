@@ -38,15 +38,15 @@ Ext.define('Practicum.view.login.LoginController', {
         var _form = me.lookupReference('loginForm'); // Form
         
         // Submit the form
-        //me.getView().mask('Authenticating...');
-        //_form.submit ({
-        //    clientValidation: true,     // Validate client data one more time
-        //    url: 'login.json',          // Login URL
-        //    scope: me,                  // Scope is this view controller
-        //    success: 'onLoginSuccess',  // When login is successful
-        //    failure: 'onLoginFailure'   // When login  fails
-        //});
-        me.onLoginSuccess(_form);
+        me.getView().mask('Authenticating...');
+        _form.submit ({
+            clientValidation: true,     // Validate client data one more time
+            url: 'login.json',          // Login URL
+            scope: me,                  // Scope is this view controller
+            success: 'onLoginSuccess',  // When login is successful
+            failure: 'onLoginFailure'   // When login  fails
+        });
+        //me.onLoginSuccess(_form);
     },
     
     onLoginSuccess: function(form, action) {

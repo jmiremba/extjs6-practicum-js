@@ -8,7 +8,7 @@ Ext.define('Practicum.view.main.Main', {
         'Practicum.view.main.Header',
         'Practicum.view.main.Footer',
         'Practicum.view.main.Menu',
-        'Practicum.view.main.Dashboard',
+        'Practicum.view.main.Content',
         'Ext.layout.container.*'
     ],
 
@@ -31,6 +31,7 @@ Ext.define('Practicum.view.main.Main', {
         xtype: 'main-footer'
     }, {
         region: 'center',
-        xtype: 'view-dashboard'
+        xtype: 'main-content',
+        id: '_appMainContentPanel'
     }]
 });
