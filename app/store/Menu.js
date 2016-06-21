@@ -1,6 +1,7 @@
 Ext.define('Practicum.store.Menu', {
     extend: 'Ext.data.Store',
     alias: 'store.menu',
+    storeId: 'menuStore',
     requires: [
         'Practicum.Utils'
     ],

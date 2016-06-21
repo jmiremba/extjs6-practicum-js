@@ -11,7 +11,8 @@ Ext.define('Practicum.Application', {
     
     requires: [
         'Practicum.view.language.Translations',
-        'Practicum.overrides.tree.ColumnOverride'
+        'Practicum.overrides.tree.ColumnOverride',
+        'Ext.window.Toast'
     ],
     
     enableQuickTips: true,

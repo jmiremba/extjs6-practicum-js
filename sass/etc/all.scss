@@ -76,3 +76,12 @@ $footer-text-color: rgb(11, 103, 196);
 .fa-icon-triton {
     color: #5fa2dd !important;
 }
+
+/**
+ * Content
+ */
+.content-title {
+    font-size: 50px !important;
+    color: $footer-text-color;
+    margin-top: 20px;
+}

@@ -1,5 +1,5 @@
 WEBAPP_SRC=/Development/workspaces/extjs/extjs-practicum/src/main/webapp
-rm -rfv $WEBAPP_SRC/archive $WEBAPP_SRC/classic* $WEBAPP_SRC/modern* $WEBAPP_SRC/cache* $WEBAPP_SRC/index*
+rm -rf $WEBAPP_SRC/archive $WEBAPP_SRC/classic* $WEBAPP_SRC/modern* $WEBAPP_SRC/cache* $WEBAPP_SRC/index*
 sencha app build classic production
 FONT_AWESOME=/Development/Fonts/font-awesome-4.6.3
 FONT_AWESOME_DEST=$WEBAPP_SRC/resources/font-awesome/fonts
@@ -12,5 +12,5 @@ cp -r $EXTJS_THEME_DIR/resources/fonts/* $FONTS_DEST
 cp -r classic/resources/images/* $WEBAPP_SRC/classic/resources/images/
 LOCALES_DEST=$WEBAPP_SRC/classic/resources/locales
 mkdir -p $LOCALES_DEST
-cp -rv ext/build/classic/locale/* $LOCALES_DEST
-rm -fv $LOCALES_DEST/*-debug*
+cp -r ext/build/classic/locale/* $LOCALES_DEST
+rm -f $LOCALES_DEST/*-debug*
